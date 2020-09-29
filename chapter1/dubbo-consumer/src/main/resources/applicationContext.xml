@@ -10,7 +10,9 @@
     <context:component-scan base-package="com.itdom"></context:component-scan>
 
     <dubbo:application name="dubbo-consumer"></dubbo:application>
-    <dubbo:registry group="demo" address="zookeeper://192.168.150.49:2181"></dubbo:registry>
-    <dubbo:reference id="demoService" check="false" interface="com.itdom.service.DemoService"/>
+    <dubbo:registry address="zookeeper://192.168.150.49:2181"></dubbo:registry>
+    <dubbo:reference id="demoService" check="false" interface="com.itdom.service.DemoService">
+<!--        <dubbo:method name="getInfo" timeout="5000" retries="1"></dubbo:method>-->
+    </dubbo:reference>
 
 </beans>
