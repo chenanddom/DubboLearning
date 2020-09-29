@@ -1,0 +1,9 @@
+server:
+  port: 8991
+spring:
+  application:
+    name: dubbo-consumer
+demo:
+  service:
+    version: 1.0.0
+    url: dubbo://192.168.150.49:9000

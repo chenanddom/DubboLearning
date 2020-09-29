@@ -9,4 +9,9 @@
 
     <context:component-scan base-package="com.itdom"></context:component-scan>
 
+    <dubbo:application name="dubbo-provider"></dubbo:application>
+    <dubbo:registry group="demo" address="zookeeper://192.168.150.49:2181"></dubbo:registry>
+    <dubbo:protocol name="dubbo" port="9000"></dubbo:protocol>
+    <bean id="demoService" class="com.itdom.service.impl.DemoServiceImpl"></bean>
+    <dubbo:service interface="com.itdom.service.DemoService" ref="demoService"></dubbo:service>
 </beans>
